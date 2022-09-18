@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message"></string>
+    <string name="fragment_welcome_textview_login">Do you have an account? Login</string>
+    <string name="fragment_welcome_textview_forgetpassword">Do you forget your password? Recover it</string>
+    <string name="fragment_welcome_textview_signup">Sign up</string>
+</resources>

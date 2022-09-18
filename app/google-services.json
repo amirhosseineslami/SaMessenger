@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "93474142468",
+    "project_id": "samessenger-30b27",
+    "storage_bucket": "samessenger-30b27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93474142468:android:7c8b59d2dc1c761c94f851",
+        "android_client_info": {
+          "package_name": "com.mintab.samessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93474142468-vtjcv9edm0efl8f722cs2o7etm5e4irc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAkL9mX-EEqH5R1cmpJk5czlQyVRxSaAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93474142468-vtjcv9edm0efl8f722cs2o7etm5e4irc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
