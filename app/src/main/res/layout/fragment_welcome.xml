@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <variable
+            name="listener"
+            type="com.mintab.samessenger.view.WelcomeFragment.WelcomeFragmentEventListener" />
 
     </data>
 
@@ -27,7 +30,7 @@
                 android:layout_marginBottom="50dp" />
 
             <TextView
-                android:id="@+id/textView_login"
+                android:id="@+id/fragment_welcom_textView_login"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -35,9 +38,10 @@
                 android:text="@string/fragment_welcome_textview_login"
                 android:gravity="center"
                 android:layout_marginBottom="16dp"
+                android:onClick="@{listener::loginTextViewOnClickListener}"
                 />
             <TextView
-                android:id="@+id/textView_signup"
+                android:id="@+id/fragment_welcome_textView_signup"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -45,9 +49,10 @@
                 android:text="@string/fragment_welcome_textview_signup"
                 android:gravity="center"
                 android:layout_marginBottom="16dp"
+                android:onClick="@{listener::signupTextViewOnClickListener}"
                 />
             <TextView
-                android:id="@+id/textView_forgetpassword"
+                android:id="@+id/fragment_welcome_textView_forgetpassword"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -55,8 +60,8 @@
                 android:text="@string/fragment_welcome_textview_forgetpassword"
                 android:gravity="center"
                 android:layout_marginBottom="16dp"
+                android:onClick="@{listener::forgetPasswordTextViewOnClickListener}"
                 />
-
 
 
         </LinearLayout>
