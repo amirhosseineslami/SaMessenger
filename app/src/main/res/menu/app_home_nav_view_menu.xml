@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="New Group"
+        android:icon="@drawable/ic_baseline_group_24"
+        />
+
+    <item android:title="Calls"
+        android:icon="@drawable/ic_baseline_perm_contact_calendar_24"
+        />
+
+    <item android:title="Saved Messages"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        />
+
+    <item android:title="Settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        />
+
+</menu>

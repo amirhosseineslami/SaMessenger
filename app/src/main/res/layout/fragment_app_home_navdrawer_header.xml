@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/fragment_app_home_navdrawer_header_profile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_account_circle_24"/>
+
+    <TextView
+        android:id="@+id/fragment_app_home_navdrawer_header_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fragment_app_home_navdrawer_icon"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_app_home_navdrawer_icon" />
+
+
+    <TextView
+        android:id="@+id/fragment_app_home_navdrawer_header_username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/fragment_app_home_navdrawer_name"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_app_home_navdrawer_name" />
+
+    <ImageButton
+        android:id="@+id/fragment_app_home_navdrawer_header_button_logout"
+        android:layout_marginTop="16dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_logout_24"
+        />
+
+</LinearLayout>

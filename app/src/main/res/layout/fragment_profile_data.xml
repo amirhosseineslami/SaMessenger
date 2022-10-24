@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userdata"
+            type="com.mintab.samessenger.model.UserData" />
+        <variable
+            name="listener"
+            type="com.mintab.samessenger.view.settingpage.ProfileDataFragment.ProfileDataFragmentEventListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/fragment_profile_data_account_imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_account_circle_24"
+                android:onClick="@{listener::onProfilePictureClick}"
+                />
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/fragment_profile_data_profile_pic_gif_loader"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="10dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_data_account_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/fragment_profile_data_account_imageView"
+                app:layout_constraintStart_toStartOf="@+id/fragment_profile_data_account_imageView"
+                app:layout_constraintTop_toTopOf="@+id/fragment_profile_data_account_imageView"
+                tools:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_data_account_imageView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_profile_firstname"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fragment_profile_input_firstname"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="start"
+                            android:hint="@string/fragment_profile_edittext_firstname_hint"
+                            android:inputType="textEmailAddress"
+                            android:textSize="20sp"
+                            android:text="@={userdata.firstname}"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_profile_lastname"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fragment_profile_input_lastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="start"
+                            android:hint="@string/fragment_profile_edittext_lastname_hint"
+                            android:inputType="textEmailAddress"
+                            android:textSize="20sp"
+                            android:text="@={userdata.lastname}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_profile_username"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_profile_input_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="start"
+                        android:hint="@string/fragment_profile_edittext_username_hint"
+                        android:inputType="textEmailAddress"
+                        android:textSize="20sp"
+                        android:text="@={userdata.username}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_profile_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_profile_input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="start"
+                        android:hint="@string/fragment_profile_edittext_email_hint"
+                        android:inputType="textEmailAddress"
+                        android:textSize="20sp"
+                        android:text="@={userdata.email}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/fragment_profile_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/fragment_profile_button_change_password_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                android:onClick="@{listener::onChangePasswordBtnOnClick}"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

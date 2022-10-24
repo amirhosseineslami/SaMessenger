@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <!--message fragment-->
+    <color name="toolbar_username_textview">#FFFFFF</color>
     <color name="online_state">#26FA00</color>
-    <color name="toolbar_username_textview">#000000</color>
 </resources>

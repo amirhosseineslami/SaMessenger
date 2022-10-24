@@ -5,7 +5,7 @@
     <data>
         <variable
             name="listener"
-            type="com.mintab.samessenger.view.LoginFragment.LoginFragmentEventListener" />
+            type="com.mintab.samessenger.view.entrance.LoginFragment.LoginFragmentEventListener" />
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -169,7 +169,8 @@
                 app:layout_constraintStart_toStartOf="@+id/login_button"
                 app:layout_constraintTop_toTopOf="@+id/login_button"
                 app:layout_constraintVertical_bias="0.0"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                android:src="@drawable/spinner_1s_200px_2"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="listener"
-            type="com.mintab.samessenger.view.WelcomeFragment.WelcomeFragmentEventListener" />
+            type="com.mintab.samessenger.view.entrance.WelcomeFragment.WelcomeFragmentEventListener" />
 
     </data>
 

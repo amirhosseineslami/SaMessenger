@@ -17,6 +17,7 @@ class CheckTextInputs(
     private val usernameEditText: TextInputLayout?,
     private val usernameOrEmailEditTextInputLayout: TextInputLayout?,
     private val nameEditText: TextInputLayout?,
+    private val lastnameEditText: TextInputLayout?,
     private val addressEditText: TextInputLayout?,
     private val newPasswordEditText: TextInputLayout?,
     private val postalCodeEditText: TextInputLayout?,
@@ -100,19 +101,16 @@ class CheckTextInputs(
         var isPasswordValid = false
         val p0 = passwordEditText!!.editText?.text
         if (passwordEditText.editText?.text!!.isNotEmpty()) {
-            passwordEditText.error = null
             if (p0!!.length < 6) {
                 passwordEditText.error =
                     context.getString(R.string.login_edittext_password_error_minimum_quantity)
             } else {
                 if (!checkSpaceContainingError(passwordEditText, p0)) {
-                    passwordEditText.error = null
                     if (p0.length > 16) {
                         passwordEditText.error =
                             context.getString(R.string.login_edittext_password_error_maximum_quantity)
                     } else {
                         // finally is valid
-                        passwordEditText.error = null
                         isPasswordValid = true
                     }
                 }
@@ -122,6 +120,8 @@ class CheckTextInputs(
             passwordEditText.error =
                 context.getString(R.string.login_edittext_password_error_minimum_quantity)
         }
+        if(isPasswordValid)
+            passwordEditText.error = null
         return isPasswordValid
     }
 
@@ -190,6 +190,24 @@ class CheckTextInputs(
                 if (nameText.length > 10) {
                     nameEditText.error =
                         context.getString(R.string.signup_edittext_error_name_maximum)
+                } else {
+                    isValid = true
+                }
+            }
+        }
+        return isValid
+    }
+    public fun checkIsLastNameValid(): Boolean {
+        var isValid = false
+        if (lastnameEditText != null) {
+            val lastnameText = lastnameEditText.editText?.text.toString()
+            if (lastnameText.length < 3) {
+                lastnameEditText.error =
+                    context.getString(R.string.signup_edittext_error_lastname_minimum)
+            } else {
+                if (lastnameText.length > 10) {
+                    lastnameEditText.error =
+                        context.getString(R.string.signup_edittext_error_lastname_maximum)
                 } else {
                     isValid = true
                 }

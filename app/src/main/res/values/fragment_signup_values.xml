@@ -9,15 +9,20 @@
         <string name="signup_edittext_input_password_hint">Put your password</string>
         <string name="signup_edittext_input_password_again_hint">Put your password again</string>
         <string name="signup_edittext_input_username_hint">User name</string>
+        <string name="signup_edittext_input_firstname_hint">First name</string>
+        <string name="signup_edittext_input_lastname_hint">Last name</string>
         <string name="signup_button_text">Sign Up</string>
         <string name="signup_textView_go_to_login">If you have an account login</string>
 
         // name edittext errors
         <string name="signup_edittext_error_name_minimum">Name must contain at least 3 characters</string>
+        <string name="signup_edittext_error_lastname_minimum">Last name must contain at least 3 characters</string>
         <string name="signup_edittext_error_name_maximum">Name must contain at max 10 characters</string>
+        <string name="signup_edittext_error_lastname_maximum">Last name must contain at max 10 characters</string>
         <string name="signup_edittext_error_password_again_equality">Passwords aren\'t equal</string>
         <string name="signup_edittext_error_email_invalid">Put a valid email address</string>
 
     // toasts
     <string name="signup_toast_error_cannot_register">Registration failed!</string>
+    <string name="signup_toast_error_cannot_register_not_completed">Incomplete Registration!</string>
 </resources>

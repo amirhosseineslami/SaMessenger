@@ -5,16 +5,17 @@
     <data>
 <variable
     name="listener"
-    type="com.mintab.samessenger.view.SignupFragment.SignupFragmentEventListener" />
+    type="com.mintab.samessenger.view.entrance.SignupFragment.SignupFragmentEventListener" />
     </data>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -26,6 +27,70 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                >
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_signup_firstname"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout_signup_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_input_firstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,-1)}"
+                        android:gravity="center"
+                        android:hint="@string/signup_edittext_input_firstname_hint"
+                        android:inputType="textPersonName"
+                        android:textSize="20sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_signup_lastname"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout_signup_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_input_lastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,0)}"
+                        android:gravity="center"
+                        android:hint="@string/signup_edittext_input_lastname_hint"
+                        android:inputType="textPersonName"
+                        android:textSize="20sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout_signup_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -36,17 +101,17 @@
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout_signup_email"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_input_username"
-                    android:layout_width="390dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,1)}"
                     android:gravity="center"
                     android:hint="@string/signup_edittext_input_username_hint"
                     android:inputType="textPersonName"
-                    android:textSize="20sp"
-                    android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,1)}" />
+                    android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,7 +130,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_input_email"
-                    android:layout_width="390dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:gravity="center"
                     android:hint="@string/signup_edittext_input_email_hint"
@@ -96,7 +161,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_input_password"
-                    android:layout_width="390dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,3)}"
                     android:gravity="center"
@@ -128,7 +193,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_input_password_again"
-                    android:layout_width="390dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:afterTextChanged="@{(text)->listener.onEditTextChangedListener(text,4)}"
                     android:gravity="center"
@@ -176,12 +241,13 @@
                 android:layout_marginBottom="8dp"
                 android:elevation="10dp"
                 android:visibility="invisible"
+                tools:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/signup_button"
                 app:layout_constraintEnd_toEndOf="@+id/signup_button"
                 app:layout_constraintStart_toStartOf="@+id/signup_button"
                 app:layout_constraintTop_toTopOf="@+id/signup_button"
                 app:layout_constraintVertical_bias="0.0"
-                tools:visibility="visible" />
+                android:src="@drawable/spinner_1s_200px_2"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
